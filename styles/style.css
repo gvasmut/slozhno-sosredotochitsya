@@ -2,4 +2,277 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+
+  background-color: var(--bg-color);
+  color: var(--main-text-color);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: normal;
+  background-attachment: fixed;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 1. шапка */
+
+.header {
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr min-content 1fr;
+  place-items: center end;
+  block-size: 100vh;
+  padding: 10px;
+}
+
+/* 1.1 меню навигации */
+
+.header__theme-menu {
+  justify-self: end;
+  color: var(--decoration-color);
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: end;
+}
+
+.header__theme-menu-button {
+  background: none;
+  border: none;
+  text-transform: lowercase;
+  block-size: 26px;
+  inline-size: 70px;
+  padding: 0 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--decoration-color);
+  outline-offset: -1px;
+  pointer-events: none
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--borer-color-hover);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: 1px solid var(--decoration-color);
+}
+
+/* 1.2 Декоративные элементы */
+
+.decorated-zone::before {
+  content: " ";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--decoration-color);
+  border-right: 1px solid var(--decoration-color);
+}
+
+.decorated-zone::after {
+  content: " ";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--decoration-color);
+  border-left: 1px solid var(--decoration-color);
+}
+
+.header__dark-decoration::before {
+  content: "REC";
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  color: var(--decoration-color-hide);
+  text-transform: uppercase;
+  line-height: 25px;
+}
+
+.header__dark-decoration::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 19px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  box-shadow: 0 0 4px 2px var(--decoration-color-hide);
+  background-color: var(--decoration-color-hide);
+}
+
+/* 1.3 Заголовок */
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  color: var(--header-title-color);
+  line-height: 96px;
+  text-shadow: 4px 4px 0 var(--shadow-title-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+.header__subtitle {
+  
+  color: var(--header-subtitle-color);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* 2. Основной контент */
+
+.main {
+  display: grid;
+  padding: 40px 10px 40px;
+  gap: 50px;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  line-height: 1.3;
+}
+
+.content__article {
+  display: grid;
+  gap: 10px;
+}
+
+.content__title {
+  font-size: inherit;
+  color: var(--main-title-color);
+}
+
+.content__article-subtitle {
+  font-size: inherit;
+  color: var(--main-subtitle-color);
+  /* margin: 20px 0 10px; */
+}
+
+.content__article-link {
+  text-shadow: 2px 2px 0 var(--shadow-link-color);
+  text-decoration: none;
+  outline: none;
+}
+
+.content__article-link:hover {
+  /* text-decoration: underline; */
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.content__article-link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.content__article-list {
+  display: grid;
+  gap: 20px;
+}
+
+.content__article-list-point {
+  display: grid;
+  gap: 10px;
+}
+
+.content__article-list-subtitle {
+  font-weight: 400;
+  color: var(--main-subtitle-color);
+}
+
+.content__card {
+  display: grid;
+  gap: 10px;
+
+}
+
+.content__card-title {
+  font-size: inherit;
+  color: var(--main-subtitle-color);
+}
+
+.content__card-gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery-card {
+  object-position: center;
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* 3. Подвал */
+
+.footer {
+  display: flex;
+  position: relative;
+  block-size: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_title {
+  font-weight: 700;
+  color: var(--header-title-color);
+  line-height: 96px;
+  text-shadow: 4px 4px 0 var(--shadow-title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+}
+
+@media (width >= 768px) {
+  .header {
+    place-items: center start;
+    padding: 20px 20px 20px 0;
+  }
+
+  .header__subtitle {
+    max-width: 364px;
+    justify-self: end;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+  
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .header__dark-decoration::before {
+    top: 20px;
+    right: 48px;
+  }
+  
+  .header__dark-decoration::after {
+    top: 28px;
+    right: 29px;
+  }
+
+  .main {
+    padding: 60px 20px 60px;
+    gap: 80px;
+  }
+
+  .content {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    line-height: 1.3;
+  }
+
 }

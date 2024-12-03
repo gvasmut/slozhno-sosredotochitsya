@@ -34,3 +34,23 @@
     display: none;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  .theme_auto {
+    --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
+    --main-text-color: #353430;
+    --header-title-color: #ffc2e6;
+    --decoration-color: #353430;
+    --accent-color: #ff8dcb;
+    --header-subtitle-color: #353430;
+    --accent-title-color:#353430;
+    --bg-title-color:#ff8dcb;
+    --shadow-title-color:#ff0070;
+    --shadow-link-color:#ff8dcb;
+    --font-family: 'IBM Plex mono', sans-serif;
+    --borer-color-hover:rgb(51, 50, 46, 0.4);
+    --main-title-color: #353430;
+    --main-subtitle-color: #353430;
+  }
+}

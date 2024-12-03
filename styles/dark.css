@@ -25,3 +25,22 @@
   --main-title-color:#ff0070;
   --main-subtitle-color: #000028;
 }
+
+@media (prefers-color-scheme: light) {
+  .theme_auto {
+    --bg-color: #000028;
+    --bg-image: url(../images/cover-image-dark.png);
+    --main-text-color: #f1b2ce;
+    --header-title-color: #db00ff;
+    --decoration-color: #ff0070;
+    --accent-color: #ff0070;
+    --header-subtitle-color: #000028;
+    --accent-title-color:#ff0070;
+    --bg-title-color:#ff0070;
+    --shadow-title-color:#ff0070;
+    --font-family: 'IBM Plex mono', sans-serif;
+    --borer-color-hover:rgba(255, 0, 112, 0.4);
+    --main-title-color:#ff0070;
+    --main-subtitle-color: #000028;
+  }
+}
